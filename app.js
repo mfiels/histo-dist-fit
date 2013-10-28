@@ -18,7 +18,7 @@
     };
 
     this.countIntervals = function() {
-      this.numIntervals = Math.ceil(this.range / this.intervalSize);
+      this.numIntervals = Math.ceil((this.data[this.data.length - 1] - this.intervalBegin) / this.intervalSize);
       
       var counts = [];
       var count = 0;
@@ -33,6 +33,7 @@
           i--;
         }
       }
+      counts.push(count);
       while (counts.length < this.numIntervals) {
         counts.push(0);
       }
